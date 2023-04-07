@@ -1,12 +1,11 @@
 {
   "name": "create-taux-app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Create Taux App - CLI",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PiotrekPKP/create-taux-app.git",
-    "directory": "apps/cli"
+    "url": "https://github.com/PiotrekPKP/create-taux-app.git"
   },
   "keywords": [
     "create-taux-app",
