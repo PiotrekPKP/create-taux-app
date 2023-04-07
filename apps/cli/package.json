@@ -19,14 +19,15 @@
   "type": "module",
   "exports": "./dist/index.js",
   "bin": {
-    "create-t3-app": "./dist/index.js"
+    "create-taux-app": "./dist/index.js"
   },
   "engines": {
     "node": ">=14.16"
   },
   "scripts": {
     "typecheck": "tsc",
-    "build": "tsup"
+    "build": "tsup",
+    "pub": "pnpm build && npm publish"
   },
   "devDependencies": {
     "@types/node": "18.11.10",
