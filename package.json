@@ -10,7 +10,8 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "pub": "cd apps/cli && pnpm pub"
+    "pub": "cd apps/cli && pnpm pub",
+    "cli": "cd apps/cli && pnpm cli"
   },
   "devDependencies": {
     "prettier": "latest",
