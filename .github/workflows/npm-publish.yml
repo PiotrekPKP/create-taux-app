@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-      - run: pnpm install && pnpm typecheck && pnpm run build:cli
+      - run: npm install && npm run typecheck && npm run build:cli
 
   publish-npm:
     needs: build
@@ -26,6 +26,6 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org/"
-      - run: pnpm run pub
+      - run: npm run pub
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
