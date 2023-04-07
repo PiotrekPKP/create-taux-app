@@ -1,0 +1,1 @@
+{"inputs":{"src/index.ts":{"bytes":29,"imports":[],"format":"esm"}},"outputs":{"dist/index.js.map":{"imports":[],"exports":[],"inputs":{},"bytes":163},"dist/index.js":{"imports":[],"exports":[],"entryPoint":"src/index.ts","inputs":{"src/index.ts":{"bytesInOutput":28}},"bytes":29}}}

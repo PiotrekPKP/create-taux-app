@@ -1,0 +1,36 @@
+{
+  "name": "create-taux-app",
+  "version": "0.0.1",
+  "description": "Create Taux App - CLI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PiotrekPKP/create-taux-app.git",
+    "directory": "apps/cli"
+  },
+  "keywords": [
+    "create-taux-app",
+    "next.js",
+    "tailwind",
+    "typescript",
+    "rust",
+    "tauri"
+  ],
+  "type": "module",
+  "exports": "./dist/index.js",
+  "bin": {
+    "create-t3-app": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "tsup": "^6.7.0",
+    "typescript": "^4.9.3"
+  }
+}
