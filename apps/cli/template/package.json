@@ -1,0 +1,40 @@
+{
+  "name": "taux",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "TAURI_DEV=true tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri",
+    "rs:generate": "./src-tauri/target/release/$npm_package_name generate",
+    "www:dev": "next dev",
+    "www:lint": "next lint",
+    "www:build": "next build && next export"
+  },
+  "dependencies": {
+    "@radix-ui/react-label": "^2.0.1",
+    "@radix-ui/react-scroll-area": "^1.0.3",
+    "@radix-ui/react-tooltip": "^1.0.5",
+    "@tauri-apps/api": "^1.2.0",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "class-variance-authority": "^0.5.1",
+    "clsx": "^1.2.1",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "lucide-react": "^0.130.1",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.12.0",
+    "tailwindcss-animate": "^1.0.5",
+    "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.2.3",
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.21",
+    "tailwindcss": "3.3.1"
+  }
+}

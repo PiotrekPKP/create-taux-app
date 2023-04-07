@@ -1,0 +1,26 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "Create Taux App"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "app"
+edition = "2021"
+rust-version = "1.59"
+
+[build-dependencies]
+tauri-build = { version = "1.2.1", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.2.4", features = ["cli"] }
+syn = { version = "2.0.13", features = ["full", "extra-traits"] }
+spinners = "4.1.0"
+convert_case = "0.6.0"
+parser = { path = "./parser" }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
