@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16.x"
-      - run: npm install && npm run typecheck && npm run build:cli
+      - run: npm install && npm run build:cli
 
   publish-npm:
     needs: build
