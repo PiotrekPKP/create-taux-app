@@ -8,11 +8,10 @@
     "docs"
   ],
   "scripts": {
-    "cli": "cd cli && pnpm cli",
+    "run:cli": "cd cli && pnpm cli",
     "build": "turbo run build --filter=!./cli/template",
-    "dev": "turbo run dev --filter=!./cli/template",
+    "dev:docs": "turbo run dev --filter=./docs",
     "dev:template": "turbo run dev --filter=./cli/template",
-    "lint": "turbo run lint",
     "pub": "cd cli && pnpm pub"
   },
   "devDependencies": {
