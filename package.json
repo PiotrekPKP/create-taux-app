@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/cli",
+    "apps/docs"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "build": "turbo run build --filter=!./apps/cli/template",
+    "dev": "turbo run dev --filter=!./apps/cli/template",
+    "dev:template": "turbo run dev --filter=./apps/cli/template",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "pub": "cd apps/cli && pnpm pub",

@@ -1,0 +1,3 @@
+template/pnpm-lock.yaml
+template/src-tauri/Cargo.lock
+template/src-tauri/parser/Cargo.lock
