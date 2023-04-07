@@ -26,7 +26,7 @@
     "cli": "pnpm build && node ./dist/index.js",
     "typecheck": "tsc",
     "build": "tsup",
-    "pub": "tsup && npm publish"
+    "pub": "pnpm run build && npm publish"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
