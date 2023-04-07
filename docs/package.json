@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/PiotrekPKP/create-taux-app/issues"
   },
-  "homepage": "https://create-taux-app.vercel.app/",
+  "homepage": "http://taux.pepega.tech/",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
