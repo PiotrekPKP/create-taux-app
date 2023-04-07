@@ -2,7 +2,7 @@
 
 import inquirer from "inquirer";
 import { displayTitle, validateAppName } from "./utils.js";
-import ora from "ora";
+import { installProject } from "./installer.js";
 
 const main = async () => {
   displayTitle();
@@ -16,7 +16,7 @@ const main = async () => {
 
   console.log();
 
-  const spinner = ora("Setting up your project...").start();
+  await installProject(projectName);
 };
 
 await main();

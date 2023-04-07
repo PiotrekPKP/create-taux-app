@@ -29,6 +29,7 @@
     "pub": "pnpm build && npm publish"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/gradient-string": "^1.1.2",
     "@types/inquirer": "^9.0.3",
     "@types/node": "18.11.10",
@@ -36,6 +37,8 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
+    "chalk": "^5.2.0",
+    "fs-extra": "^11.1.1",
     "gradient-string": "^2.0.2",
     "inquirer": "^9.1.5",
     "ora": "^6.3.0"

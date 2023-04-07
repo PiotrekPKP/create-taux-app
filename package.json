@@ -7,12 +7,12 @@
     "apps/docs"
   ],
   "scripts": {
+    "cli": "turbo run cli --filter=./apps/cli",
     "build": "turbo run build --filter=!./apps/cli/template",
     "dev": "turbo run dev --filter=!./apps/cli/template",
     "dev:template": "turbo run dev --filter=./apps/cli/template",
     "lint": "turbo run lint",
-    "pub": "cd apps/cli && pnpm pub",
-    "cli": "cd apps/cli && pnpm cli"
+    "pub": "cd apps/cli && pnpm pub"
   },
   "devDependencies": {
     "prettier": "latest",
