@@ -99,6 +99,11 @@ export const installProject = async (projectName: string) => {
   packageJson.name = scaffoldedName;
   fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
+  const tauriJsonPath = path.join(projectDir, "src-tauri/tauri.conf.json");
+  const tauriJson = fs.readJsonSync(tauriJsonPath);
+  tauriJson.package.productName = scaffoldedName;
+  fs.writeJsonSync(tauriJsonPath, tauriJson, { spaces: 2 });
+
   spinner.succeed(
     `${chalk.cyan.bold(scaffoldedName)} ${chalk.green(
       "scaffolded successfully!"
