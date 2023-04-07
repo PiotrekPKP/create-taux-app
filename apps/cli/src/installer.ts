@@ -4,6 +4,8 @@ import { PKG_ROOT } from "./const.js";
 import inquirer from "inquirer";
 import fs from "fs-extra";
 import chalk from "chalk";
+import { execa } from "execa";
+import { getCurrentPackageManager } from "./utils.js";
 
 export const installProject = async (projectName: string) => {
   const spinner = ora("Setting up your project...").start();
@@ -82,6 +84,12 @@ export const installProject = async (projectName: string) => {
   spinner.start();
 
   fs.copySync(srcDir, projectDir);
+
+  spinner.text = "Installing dependencies...";
+  const packageManager = getCurrentPackageManager();
+  await execa(packageManager, packageManager === "yarn" ? [] : ["install"], {
+    cwd: projectDir,
+  });
 
   const scaffoldedName =
     projectName === "." ? "App" : chalk.cyan.bold(projectName);
