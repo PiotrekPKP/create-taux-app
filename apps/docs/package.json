@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "@taux/docs",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Create Taux App - Docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/PiotrekPKP/create-taux-app.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Piotr Pilszczek <peterpkppeter@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/PiotrekPKP/create-taux-app/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://create-taux-app.vercel.app/",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/node": "18.11.10",
+    "eslint": "^8.37.0",
     "typescript": "^4.9.3"
   }
 }
