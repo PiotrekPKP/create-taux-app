@@ -3,16 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/cli",
-    "apps/docs"
+    "cli",
+    "cli/template",
+    "docs"
   ],
   "scripts": {
-    "cli": "cd apps/cli && pnpm cli",
-    "build": "turbo run build --filter=!./apps/cli/template",
-    "dev": "turbo run dev --filter=!./apps/cli/template",
-    "dev:template": "turbo run dev --filter=./apps/cli/template",
+    "cli": "cd cli && pnpm cli",
+    "build": "turbo run build --filter=!./cli/template",
+    "dev": "turbo run dev --filter=!./cli/template",
+    "dev:template": "turbo run dev --filter=./cli/template",
     "lint": "turbo run lint",
-    "pub": "cd apps/cli && pnpm pub"
+    "pub": "cd cli && pnpm pub"
   },
   "devDependencies": {
     "prettier": "latest",
