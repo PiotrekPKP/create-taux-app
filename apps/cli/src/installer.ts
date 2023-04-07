@@ -92,9 +92,16 @@ export const installProject = async (projectName: string) => {
   });
 
   const scaffoldedName =
-    projectName === "." ? "App" : chalk.cyan.bold(projectName);
+    projectName === "." ? path.basename(process.cwd()) : projectName;
+
+  const packageJsonPath = path.join(projectDir, "package.json");
+  const packageJson = fs.readJsonSync(packageJsonPath);
+  packageJson.name = scaffoldedName;
+  fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
   spinner.succeed(
-    `${scaffoldedName} ${chalk.green("scaffolded successfully!")}\n`
+    `${chalk.cyan.bold(scaffoldedName)} ${chalk.green(
+      "scaffolded successfully!"
+    )}\n`
   );
 };
