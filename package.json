@@ -9,9 +9,11 @@
   ],
   "scripts": {
     "run:cli": "cd cli && pnpm cli",
-    "build": "turbo run build --filter=!./cli/template",
+    "build:cli": "turbo run build --filter=./cli --filter=!./cli/template",
+    "build:docs": "turbo run build --filter=./docs",
     "dev:docs": "turbo run dev --filter=./docs",
     "dev:template": "turbo run dev --filter=./cli/template",
+    "build": "turbo run build --filter=!./cli/template",
     "pub": "cd cli && pnpm pub"
   },
   "devDependencies": {
