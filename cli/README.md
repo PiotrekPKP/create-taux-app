@@ -1,6 +1,6 @@
 # Create Taux App
 
-![features](./.github/features.png)
+![features](../.github/features.png)
 
 ## What is this?
 
