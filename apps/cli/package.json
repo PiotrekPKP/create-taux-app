@@ -1,12 +1,13 @@
 {
   "name": "create-taux-app",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Create Taux App - CLI",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/PiotrekPKP/create-taux-app.git"
   },
+  "homepage": "https://create-taux-app.vercel.app/",
   "keywords": [
     "create-taux-app",
     "next.js",
