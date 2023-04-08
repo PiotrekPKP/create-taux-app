@@ -222,9 +222,20 @@ pub fn generate_typescript_command_types() {
                     syn::ReturnType::Type(_, return_type) => parse_type(&return_type),
                 };
 
-                command_output_text.push_str(&format!(
-                    "{fn_name}: RustFunctionCreator<{arguments_string}, {return_string}>, "
-                ));
+                if return_string.contains("Result") {
+                    let result_type = return_string.replace("Result<", "").replace(">", "");
+                    let (success_type, error_type) = result_type
+                        .split_once(",")
+                        .unwrap_or(("".into(), "".into()));
+
+                    command_output_text.push_str(&format!(
+                        "{fn_name}: RustFunctionCreator<{arguments_string}, {success_type}, {error_type}>, "
+                    ));
+                } else {
+                    command_output_text.push_str(&format!(
+                        "{fn_name}: RustFunctionCreator<{arguments_string}, {return_string}, never>, "
+                    ));
+                }
             }
             _ => {}
         }
@@ -258,7 +269,7 @@ fn create_initial_types() -> String {
     output_text.push_str("type Option<T> = T | undefined;");
     output_text.push_str("type Result<T, U> = T | U;");
     output_text
-        .push_str("type RustFunctionCreator<Args, Return> = { args: Args; return: Return };");
+        .push_str("type RustFunctionCreator<Args, Return, Error> = { args: Args; return: Return; error: Error };");
 
     output_text
 }

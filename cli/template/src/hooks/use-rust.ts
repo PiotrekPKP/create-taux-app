@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 
 export type RustFunctionName = keyof RustFunction;
 
-export const useRustMutation = <T extends keyof RustFunction>(fnName: T) => {
+export const useRustCommand = <T extends keyof RustFunction>(fnName: T) => {
   const [data, setData] = useState<RustFunction[T]["return"] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<RustFunction[T]["error"] | null>(null);
 
   const mutate = async (
     ...args: RustFunction[T]["args"] extends never
@@ -31,10 +31,10 @@ export const useRustMutation = <T extends keyof RustFunction>(fnName: T) => {
       setIsLoading(false);
       return response;
     } catch (error) {
-      setError(error as string);
+      setError(error as RustFunction[T]["error"]);
       setIsError(true);
       setIsLoading(false);
-      throw new Error(error as string);
+      throw error;
     }
   };
 
@@ -50,14 +50,14 @@ export const useRustQuery = <T extends keyof RustFunction>(
   const [data, setData] = useState<RustFunction[T]["return"] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState<Error | null>(null);
+  const [error, setError] = useState<RustFunction[T]["error"] | null>(null);
 
   const fetchData = async () => {
     try {
       const data = await invoke<RustFunction[T]["return"]>(fnName, args[0]);
       setData(data);
     } catch (error) {
-      setError(error as Error);
+      setError(error as RustFunction[T]["error"]);
       setIsError(true);
     }
 

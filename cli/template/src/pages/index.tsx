@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { NextPage } from "next";
 import { Input } from "@/components/ui/input";
-import { useRustMutation, useRustQuery } from "@/hooks/use-rust";
+import { useRustCommand, useRustQuery } from "@/hooks/use-rust";
 import { useState } from "react";
 import { Trash2, Circle, CheckCircle2 } from "lucide-react";
 import {
@@ -14,9 +14,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Home: NextPage = () => {
   const { data, isLoading, refetch } = useRustQuery("get_todo_items");
-  const { mutate: addTask, error, isError } = useRustMutation("add_todo_item");
-  const { mutate: deleteTask } = useRustMutation("remove_todo_item");
-  const { mutate: toggleTask } = useRustMutation("toggle_todo_item");
+  const { mutate: addTask, error, isError } = useRustCommand("add_todo_item");
+  const { mutate: deleteTask } = useRustCommand("remove_todo_item");
+  const { mutate: toggleTask } = useRustCommand("toggle_todo_item");
 
   const [newTodoName, setNewTodoName] = useState("");
 
