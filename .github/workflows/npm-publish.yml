@@ -21,6 +21,6 @@ jobs:
         uses: pnpm/action-setup@v2
 
       - name: Install, build and publish
-        run: pnpm install && pnpm run build:cli && pnpm run pub
+        run: pnpm install && pnpm run pub
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
