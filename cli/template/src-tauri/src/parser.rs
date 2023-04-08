@@ -222,11 +222,12 @@ pub fn generate_typescript_command_types() {
                     syn::ReturnType::Type(_, return_type) => parse_type(&return_type),
                 };
 
-                if return_string.contains("Result") {
-                    let result_type = return_string.replace("Result<", "").replace(">", "");
+                if return_string.starts_with("Result<") {
+                    let result_type = return_string.replace("Result<", "");
+                    let result_type = result_type[..result_type.len() - 1].to_string();
                     let (success_type, error_type) = result_type
                         .split_once(",")
-                        .unwrap_or(("".into(), "".into()));
+                        .unwrap_or(("void".into(), "never".into()));
 
                     command_output_text.push_str(&format!(
                         "{fn_name}: RustFunctionCreator<{arguments_string}, {success_type}, {error_type}>, "
