@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "nextra-theme-docs";
+import PackageManagerTabs, { Tab } from "../components/package-manager-tabs";
 
 # Getting started
 
@@ -6,7 +6,7 @@ import { Tab, Tabs } from "nextra-theme-docs";
 
 To create a new project, you can use the following command:
 
-<Tabs items={["pnpm", "npm"]}>
+<PackageManagerTabs>
   <Tab>
   ```bash copy
   pnpx create-taux-app@latest
@@ -17,4 +17,30 @@ To create a new project, you can use the following command:
   npx create-taux-app@latest
   ```
   </Tab>
-</Tabs>
+</PackageManagerTabs>
+
+During the installation, you will be asked to choose a name for your app. After that, the template will be downloaded and packages will be installed using your package manager.
+
+## Running the app
+
+To run the app, you can use the following command:
+
+<PackageManagerTabs>
+  <Tab>
+  ```bash copy
+  pnpm run dev
+  ```
+  </Tab>
+  <Tab>
+  ```bash copy
+  npm run dev
+  ```
+  </Tab>
+</PackageManagerTabs>
+
+This will start three parallel processes:
+- NextJS server
+- Tauri app builder
+- Rust to TypeScript types generator
+
+The Tauri app will be (re)built every time you make a change to the Rust code. However, the NextJS app will be refreshed in the window automatically. What's more, the Rust app will keep generating TS types based on the commands in your Rust code. Those types will automatically be available to your Next.js app, which means you won't need to run any additional commands.
